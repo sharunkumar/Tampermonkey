@@ -18,7 +18,7 @@
         let apply_xpath = "/html/body/div[5]/div[3]/div/div[1]/div[1]/div/div[1]/div/div/div[3]/div/div/div[1]/button"
         let desc_xpaths = ["/html/body/div[5]/div[3]/div/div[1]/div[1]/div/div[1]/div/div/div[1]/h1", "/html/body/div[5]/div[3]/div/div[1]/div[1]/div/div[2]/article"]
 
-        let apply_button = document.evaluate(apply_xpath, document).iterateNext()
+        let apply_button = document.querySelector('#ember27') // document.evaluate(apply_xpath, document).iterateNext()
 
         let copy_button = apply_button.cloneNode(true)
 
