@@ -39,27 +39,13 @@ function waitForElm(selector) {
 
         let copy_button = apply_button.cloneNode(true)
 
-        function copyText(text) {
-            if (!text) {
-                return
-            }
-
-            let ta = document.createElement("textarea")
-            document.body.appendChild(ta)
-            ta.value = text;
-            ta.select();
-
-            document.execCommand("copy")
-            document.body.removeChild(ta)
-        }
-
         copy_button.id = "copy-button"
         copy_button.text = "Copy"
         copy_button.href = "javascript:void(0)"
         copy_button.classList.remove("ycdc-btn")
         copy_button.addEventListener('click', () => {
             let elements = [document.querySelector(".jobs-unified-top-card__job-title").closest(".p5"), document.querySelector(".jobs-description-content__text")]
-            copyText(elements.map(x => x.innerText).join("\n\n"))
+            navigator.clipboard.writeText(elements.map(x => x.innerText).join("\n\n"))
         })
 
         while (copy_button.firstChild) {
