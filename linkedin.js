@@ -36,6 +36,7 @@ function waitForElm(selector) {
     let apply_selector = "#ember27"
 
     waitForElm(apply_selector).then(apply_button => {
+        let elements = [document.querySelector(".jobs-unified-top-card__job-title").closest(".p5"), document.querySelector(".jobs-description-content__text")]
 
         let copy_button = apply_button.cloneNode(true)
 
@@ -44,7 +45,6 @@ function waitForElm(selector) {
         copy_button.href = "javascript:void(0)"
         copy_button.classList.remove("ycdc-btn")
         copy_button.addEventListener('click', () => {
-            let elements = [document.querySelector(".jobs-unified-top-card__job-title").closest(".p5"), document.querySelector(".jobs-description-content__text")]
             navigator.clipboard.writeText(elements.map(x => x.innerText).join("\n\n"))
         })
 
