@@ -35,10 +35,7 @@ function waitForElm(selector) {
     console.log("hello from tampermonkey")
     let apply_selector = "#ember27"
 
-    waitForElm(apply_selector).then(elem => {
-        let desc_xpaths = ["/html/body/div[5]/div[3]/div/div[1]/div[1]/div/div[1]/div/div/div[1]/h1", "/html/body/div[5]/div[3]/div/div[1]/div[1]/div/div[2]/article"]
-
-        let apply_button = elem
+    waitForElm(apply_selector).then(apply_button => {
 
         let copy_button = apply_button.cloneNode(true)
 
@@ -61,7 +58,7 @@ function waitForElm(selector) {
         copy_button.href = "javascript:void(0)"
         copy_button.classList.remove("ycdc-btn")
         copy_button.addEventListener('click', () => {
-            let elements = desc_xpaths.map(item => document.evaluate(item, document).iterateNext())
+            let elements = [document.querySelector(".jobs-unified-top-card__job-title").closest(".p5"), document.querySelector(".jobs-description-content__text")]
             copyText(elements.map(x => x.innerText).join("\n\n"))
         })
 
