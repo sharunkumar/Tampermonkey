@@ -2,7 +2,7 @@
 // @name         Copy Job Description
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  Adds a "Copy" button to linkedin job listing
+// @description  Adds a "Copy" button to ycombinator job listing
 // @author       sharunkumar
 // @match        https://www.linkedin.com/jobs/view/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=linkedin.com
@@ -33,7 +33,7 @@ function waitForElm(selector) {
     'use strict';
 
     console.log("hello from tampermonkey")
-    let apply_selector = "#ember27"
+    let apply_selector = ".social-share__dropdown-trigger"
 
     waitForElm(apply_selector).then(apply_button => {
 
