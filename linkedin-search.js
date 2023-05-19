@@ -33,35 +33,29 @@
         });
     }
 
-    function event_loop() {
-        if (document.querySelector("#copy-button")) return
+    let apply_selector = ".social-share__dropdown-trigger"
 
-        let apply_selector = ".social-share__dropdown-trigger"
+    waitForElm(apply_selector).then(apply_button => {
 
-        waitForElm(apply_selector).then(apply_button => {
+        let copy_button = apply_button.cloneNode(true)
 
-            let copy_button = apply_button.cloneNode(true)
-
-            copy_button.id = "copy-button"
-            copy_button.text = "Copy"
-            copy_button.href = "javascript:void(0)"
-            copy_button.classList.remove("ycdc-btn")
-            copy_button.addEventListener('click', () => {
-                let elements = [document.querySelector(".jobs-unified-top-card__job-title").closest(".p5"), document.querySelector(".jobs-description-content__text")]
-                navigator.clipboard.writeText(elements.map(x => x.innerText).join("\n\n"))
-            })
-
-            while (copy_button.firstChild) {
-                copy_button.removeChild(copy_button.firstChild)
-            }
-
-            copy_button.appendChild(document.createTextNode("Copy"))
-
-            apply_button.parentElement.appendChild(copy_button)
-
+        copy_button.id = "copy-button"
+        copy_button.text = "Copy"
+        copy_button.href = "javascript:void(0)"
+        copy_button.classList.remove("ycdc-btn")
+        copy_button.addEventListener('click', () => {
+            let elements = [document.querySelector(".jobs-unified-top-card__content--two-pane"), document.querySelector(".jobs-description__content")]
+            navigator.clipboard.writeText(elements.map(x => x.innerText).join("\n\n"))
         })
-    }
 
-    setInterval(event_loop, 1000);
+        while (copy_button.firstChild) {
+            copy_button.removeChild(copy_button.firstChild)
+        }
+
+        copy_button.appendChild(document.createTextNode("Copy"))
+
+        apply_button.parentElement.appendChild(copy_button)
+
+    })
 
 })();
