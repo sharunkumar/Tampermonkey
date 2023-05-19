@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         Linkedin Job Search
+// @name         Copy Job Description (Search)
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  try to take over the world!
-// @author       You
+// @description  Adds a "Copy" button to LinkedIn search results page
+// @author       sharunkumar
 // @match        https://www.linkedin.com/jobs/search/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=linkedin.com
 // @grant        none

@@ -2,7 +2,7 @@
 // @name         Copy Job Description
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  Adds a "Copy" button to ycombinator job listing
+// @description  Adds a "Copy" button to LinkedIn job listing
 // @author       sharunkumar
 // @match        https://www.linkedin.com/jobs/view/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=linkedin.com
