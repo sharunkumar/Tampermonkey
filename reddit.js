@@ -12,6 +12,11 @@
 (function () {
     'use strict';
 
+    const isDisabledPath = () => [
+        /\/achievements/,
+        /\/user\/\w+\/achievements/
+    ].some(regex => regex.test(window.location.pathname))
+
     const isFirefox = navigator.userAgent.includes('Firefox');
     const widthStyle = isFirefox ? '-moz-available' : '-webkit-fill-available';
 
@@ -20,12 +25,12 @@
             if (mutation.addedNodes.length) {
                 const subgridContainer = document.getElementById('subgrid-container');
                 if (subgridContainer) {
-                    subgridContainer.style.width = widthStyle;
+                    subgridContainer.style.width = isDisabledPath() ? undefined : widthStyle;
                 }
 
                 const mainContainer = document.querySelector('.main-container');
                 if (mainContainer) {
-                    mainContainer.style.display = 'flex';
+                    mainContainer.style.display = isDisabledPath() ? undefined : 'flex';
                 }
             }
         }
