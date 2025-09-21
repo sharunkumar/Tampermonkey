@@ -18,9 +18,11 @@
                 const subgridContainer = document.getElementById('subgrid-container');
                 if (subgridContainer) {
                     subgridContainer.style.width = '-moz-available';
-                    // The element has been found and modified, we can stop observing.
-                    // observer.disconnect();
-                    return;
+                }
+
+                const mainContainer = document.querySelector('.main-container');
+                if (mainContainer) {
+                    mainContainer.style.display = 'flex';
                 }
             }
         }
