@@ -12,12 +12,15 @@
 (function () {
     'use strict';
 
+    const isFirefox = navigator.userAgent.includes('Firefox');
+    const widthStyle = isFirefox ? '-moz-available' : '-webkit-fill-available';
+
     const observer = new MutationObserver(mutations => {
         for (const mutation of mutations) {
             if (mutation.addedNodes.length) {
                 const subgridContainer = document.getElementById('subgrid-container');
                 if (subgridContainer) {
-                    subgridContainer.style.width = '-moz-available';
+                    subgridContainer.style.width = widthStyle;
                 }
 
                 const mainContainer = document.querySelector('.main-container');
