@@ -14,7 +14,8 @@
 
     const isDisabledPath = () => [
         /\/achievements/,
-        /\/user\/\w+\/achievements/
+        /\/notifications/,
+        /\/user\/\w+\/achievements/,
     ].some(regex => regex.test(window.location.pathname))
 
     const isFirefox = navigator.userAgent.includes('Firefox');
