@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         Reddit
+// @name         Reddit Wide Screen
 // @namespace    http://tampermonkey.net/
-// @version      2025-09-21
-// @description  try to take over the world!
-// @author       You
+// @version      2025-10-27
+// @description  Wide-Screen view of Reddit
+// @author       sharunkumar
 // @match        https://www.reddit.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=reddit.com
 // @grant        none
